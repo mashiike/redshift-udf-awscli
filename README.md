@@ -35,3 +35,11 @@ $ lambroll deploy
 
 ### Create Redshift UDF
 
+```sql
+CREATE OR REPLACE EXTERNAL FUNCTION exf_awscli(varchar(max))
+RETURNS varchar(max)
+STABLE
+LAMBDA 'redshift-udf-awscli'
+IAM_ROLE 'arn:aws:iam::012345678910:role/warehouse';
+```
+
